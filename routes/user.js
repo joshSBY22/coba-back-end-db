@@ -67,15 +67,15 @@ router.post("/", async function(req, res){
         // });
 
         //Dengan bind
-        // let result = await sequelize.query("INSERT INTO users (nama, umur, email, saldo) VALUES ($nama, $umur, $email, $saldo)", {
-        //     bind: {
-        //         umur: umur,
-        //         nama: nama,
-        //         saldo: 0,       
-        //         email: email,
-        //     },
-        //     type: QueryTypes.INSERT
-        // });
+        let result = await sequelize.query("INSERT INTO users (nama, umur, email, saldo) VALUES ($nama, $umur, $email, $saldo)", {
+            bind: {
+                umur: umur,
+                nama: nama,
+                saldo: 0,       
+                email: email,
+            },
+            type: QueryTypes.INSERT
+        });
 
         //Alternatif dengan "?"
         // let result = await sequelize.query("INSERT INTO users (nama, umur, email, saldo) VALUES (?,?,?,?)", {
